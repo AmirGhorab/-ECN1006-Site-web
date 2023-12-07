@@ -13,13 +13,12 @@
       }
       h1 {
         color: #00ff00;
-        font-size: 30px;
-        font-weight: bold;
+        font-size: 166.5%;
         text-align: center;
-        font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
+        font-family: "Courier New", "Arial", sans-serif;
         background: linear-gradient(#01550e 5%, #000000 30%, #01550e 150px);
         padding: 1%;
-        height: 100%;
+        height: 150%;
         margin: 40px auto;
         border: 1px solid #00bb00;
         border-radius: 20%;
@@ -38,6 +37,8 @@
         margin: 40px auto;
         color: #00ff00;
         font-size: xx-large;
+        font-family: "Courier New", "Arial", sans-serif;
+        font-weight: bold;
         background: linear-gradient(#002706 5%, #5a5a5a 30%, #002706 150px);
         padding: 15px 20px;
         cursor: pointer;
@@ -61,27 +62,27 @@
         border: 1px solid #00bb00;
       }
       .introduction {
-        font-family: "Cerebri Sans", "Helvetica", "Arial", "sans-serif";
-        color: #00ff00;
-        font-size: 25px;
+        font-family: "Courier New", "Arial", sans-serif;
+        color: #00e000;
+        font-size: 180%;
         text-align: left;
         width: 80%;
         margin: 40px auto;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
       }
       .paragraphe {
-        font-family: "Cerebri Sans", "Helvetica", "Arial", "sans-serif";
-        color: #00ff00;
-        font-size: 25px;
+        font-family: "Courier New", "Arial", sans-serif;
+        color: #00e000;
+        font-size: 180%;
         text-align: left;
         width: 80%;
         margin: 40px auto;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
       }
       .conclusion {
-        font-family: "Cerebri Sans", "Helvetica", "Arial", "sans-serif";
-        color: #00ff00;
-        font-size: 25px;
+        font-family: "Courier New", "Arial", sans-serif;
+        color: #00e000;
+        font-size: 180%;
         text-align: left;
         margin: 40px auto;
         width: 80%;
@@ -89,6 +90,8 @@
       }
       ol {
         color: #00bb00;
+        font-family: "Times New Roman", Times, serif, "Courier New", "Arial",
+          sans-serif;
         font-size: 20px;
         text-align: justify;
         margin: 40px auto;
@@ -105,15 +108,16 @@
       }
     </style>
     <h1 class="titre">
-      Les avantages pédagogiques de l’écriture avec ChatGPT et les autres
-      modèles de langages
+      <strong
+        >Les avantages pédagogiques de l’écriture avec ChatGPT et les autres
+        modèles de langages</strong
+      >
     </h1>
-
     <hr />
-
     <img
-      src="https://i.imgur.com/Vg6wYdr.png"
+      src="https://i.imgur.com/gGP2qoG.png"
       alt="Man in front of beautiful sunset sitting at a desk writing on a tablet in front of a computer, on his screen there is AI writing"
+      id="mainImage"
     />
     <div class="cadretexte">
       <p class="introduction">
@@ -166,8 +170,7 @@
         générées par une intelligence artificielle.
       </p>
     </div>
-    <button class="button">Appuyez ici</button>
-
+    <button onclick="changeColor()">Choisissez un thème</button>
     <hr />
     <div class="cadresreferences">
       <ol>
@@ -239,22 +242,25 @@
       </ol>
     </div>
     <script>
-      function infoButton() {
-        var programme = prompt("Quel est votre programme d'études à l'UOF ?");
-        if (
-          programme === "Culture Numérique" ||
-          programme === "Numérique" ||
-          programme === "culture numérique" ||
-          programme === "numérique"
-        )
-          alert("Vous êtes bien sur la bonne page alors !");
-        else
-          alert(
-            "Vous êtes sur une site fait dans le cadre d'un devoir pour le programme de cultures numériques, j'espère que vous apprécierai votre temps ici !."
-          );
+      function changeColor() {
+        var userChoice = prompt(
+          "Quelle pillule préfériez vous: rouge ou bleu?"
+        ).toLowerCase();
+        var mainImage = document.getElementById("mainImage");
+        if (userChoice === "rouge") {
+          document.body.style.filter = "hue-rotate(240deg)";
+          document.body.style.backgroundImage =
+            "url('https://i.imgur.com/Nl0Wdnm.gif')";
+          mainImage.src = "https://i.imgur.com/hYuPl9R.png";
+        } else if (userChoice === "bleu") {
+          document.body.style.filter = "hue-rotate(120deg)";
+          document.body.style.backgroundImage =
+            "url('https://i.imgur.com/ZmBiOFG.gif')";
+          mainImage.src = "https://i.imgur.com/1as5Acs.png";
+        } else {
+          alert("Choix invalid. Choisissez soit rouge ou bleu.");
+        }
       }
-      let cliquemoi = document.querySelector("button");
-      cliquemoi.addEventListener("click", infoButton);
     </script>
   </body>
 </html>
